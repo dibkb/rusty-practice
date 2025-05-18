@@ -1,12 +1,9 @@
 fn main() {
-    let sentence = "Hello";
-    let mut ans = String::new();
-    for (_,c) in sentence.chars().enumerate(){
-        if c != ' ' {
-            ans.push(c);
-        }else{
-            break;
-        }
-    }
-    println!("{}",ans);
+    let mut sentence = String::from("Hello world");
+    println!("{}", append_rust_suffix(&mut sentence));
+}
+
+fn append_rust_suffix(sen: &mut String) -> &mut String {
+    sen.push_str(" from rust");
+    sen
 }
